@@ -1,7 +1,11 @@
 import React from "react";
 function Member () {
     return(
-        <div>Liên kết thành viên</div>
+        <div>
+            <h1>
+            Liên kết thành viên
+            </h1>
+           </div>
     )
 }
 export default Member

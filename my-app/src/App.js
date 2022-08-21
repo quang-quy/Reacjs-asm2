@@ -1,11 +1,8 @@
 import { Card, CardHeader, CardFooter,CardBody,Row,Col,Container  } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { STAFFS } from './shared/staffs';
-import dateFormat from 'dateformat';
-import { useState } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPhone,faFax,faEnvelope,faIdCard,faPeopleGroup,faMoneyBill } from '@fortawesome/free-solid-svg-icons'
-import { BrowserRouter, Link, NavLink, Routes } from 'react-router-dom';
+import { BrowserRouter, NavLink, Routes } from 'react-router-dom';
 import Member from './component/Member';
 import Salary from './component/Salary'
 import Department from './component/Department';
@@ -14,52 +11,29 @@ import Home from  './component/Home'
 
 import './App.css';
 
-
 function App() {
-
-  const [staffInfo, setStaffInfo] = useState(null)
-console.log('staff', staffInfo)
-  const renderStaffInfo = () => {
-    return <Row className=''>
-      <Col className='col-5 p-1'>
-        <Card className='staff-detail' xs="12">
-       
-          <CardBody>
-            <img className='Teim' src={staffInfo.image}/>
-            <b className='mb-3'>Họ và tên: {staffInfo.name}</b>
-            <p>Ngày sinh: {dateFormat(staffInfo.doB)}</p>
-            <p>Ngày vào công ty: {staffInfo.startDate}</p>
-            <p>Phòng ban: {staffInfo.department.name}</p>
-            <p>Số ngày nghỉ còn lại: {staffInfo.annualLeave}</p>
-            <p>Số ngày đã làm thêm: {staffInfo.overTime}</p>
-          </CardBody>
-        </Card>
-      </Col>
-    </Row>
-  }
 
 library.add(faPhone,faFax,faEnvelope,faIdCard,faPeopleGroup,faMoneyBill)
   return (
     <div className="App">
-     
+      
+      <CardHeader className='asm1-header'>
+      <NavLink className={"Link"} to="/"> <FontAwesomeIcon icon="fa-solid fa-home" />Home</NavLink> <br></br>
+          <NavLink className={"Link"} to="/Member"> <FontAwesomeIcon icon="fa-solid fa-people-group" />Nhân viên</NavLink> <br></br>
+         <NavLink className={"Link"} to="/Department"><FontAwesomeIcon icon="fa-solid fa-id-card" />Phòng ban</NavLink> <br></br>
+      <NavLink className={"Link"} to="/Salary"> <FontAwesomeIcon icon="fa-solid fa-money-bill" />Lương</NavLink>
+          </CardHeader>
       <Card>
       
-      <Home/>
+   
         <CardBody>
             <Container>
-            <h1>Nhân Viên</h1>
-            <hr></hr>
-            <Row>
-              {STAFFS.map((s, idx) => <Col  key={idx} className="bg-light p-2" xs="6" sm="4" lg="2" style={{cursor: 'pointer'}} onClick={() => setStaffInfo(s)}>
-                <img src='https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6' className='border mx-auto'>
-
-                </img>
-                <p className='Name'> {s.name} </p>
-              </Col>)}
-            </Row>
-            {
-              staffInfo && renderStaffInfo()
-            }
+              <Routes>
+                <Route path='/' exact element={<Home/>}></Route>
+                <Route path='/Member' exact element ={<Member/>}></Route>
+                <Route path='/Salary' exact element ={<Salary/>}></Route>
+                <Route path='/Department' exact element ={<Department/>}></Route>
+              </Routes>
           </Container>  
         </CardBody>
         <CardFooter>
@@ -94,13 +68,5 @@ library.add(faPhone,faFax,faEnvelope,faIdCard,faPeopleGroup,faMoneyBill)
     
   );
 }
-<BrowserRouter>
-<Routes>
-<Route path='/Member' element = {<Member/>} ></Route>
-<Route path='/Department' element={<Department/>} ></Route>
-<Route path='/Salary' element={<Salary/>} ></Route>
-</Routes>
-</BrowserRouter>
-
 
 export default App;

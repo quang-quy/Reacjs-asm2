@@ -7,20 +7,14 @@ import App from './App';
 import Member from './component/Member';
 import Salary from './component/Salary'
 import Department from './component/Department';
-
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    <Routes>
-      <Route path='/' element={<App/>}></Route>
-      <Route path='/Member' element = {<Member/>} ></Route>
-      <Route path='/Department' element={<Department/>} ></Route>
-      <Route path='/Salary' element={<Salary/>} ></Route>
-    </Routes>
+                <BrowserRouter>
+
+    <App/>
     </BrowserRouter>
   </React.StrictMode>
 );
