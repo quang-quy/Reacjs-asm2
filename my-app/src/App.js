@@ -2,26 +2,29 @@ import { Card, CardHeader, CardFooter,CardBody,Row,Col,Container  } from 'reacts
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPhone,faFax,faEnvelope,faIdCard,faPeopleGroup,faMoneyBill } from '@fortawesome/free-solid-svg-icons'
-import { BrowserRouter, NavLink, Routes } from 'react-router-dom';
+import { BrowserRouter, NavLink, Routes, useParams } from 'react-router-dom';
 import Member from './component/Member';
 import Salary from './component/Salary'
 import Department from './component/Department';
 import {Route } from 'react-router-dom';
 import Home from  './component/Home'
-
+import Detail from './component/Detailcomponent';
 import './App.css';
-
+import { STAFFS } from "./shared/staffs";
 function App() {
-
+  
 library.add(faPhone,faFax,faEnvelope,faIdCard,faPeopleGroup,faMoneyBill)
-  return (
+
+
+return (
     <div className="App">
       
       <CardHeader className='asm1-header'>
-      <NavLink className={"Link"} to="/"> <FontAwesomeIcon icon="fa-solid fa-home" />Home</NavLink> <br></br>
+      <NavLink className={"Link"} to="/"> Home</NavLink> <br></br>
           <NavLink className={"Link"} to="/Member"> <FontAwesomeIcon icon="fa-solid fa-people-group" />Nhân viên</NavLink> <br></br>
          <NavLink className={"Link"} to="/Department"><FontAwesomeIcon icon="fa-solid fa-id-card" />Phòng ban</NavLink> <br></br>
       <NavLink className={"Link"} to="/Salary"> <FontAwesomeIcon icon="fa-solid fa-money-bill" />Lương</NavLink>
+      <NavLink className={"Link"} to="/Detailcomponent"> <FontAwesomeIcon icon="fa-solid fa-people-group" /></NavLink>
           </CardHeader>
       <Card>
       
@@ -30,9 +33,11 @@ library.add(faPhone,faFax,faEnvelope,faIdCard,faPeopleGroup,faMoneyBill)
             <Container>
               <Routes>
                 <Route path='/' exact element={<Home/>}></Route>
-                <Route path='/Member' exact element ={<Member/>}></Route>
-                <Route path='/Salary' exact element ={<Salary/>}></Route>
-                <Route path='/Department' exact element ={<Department/>}></Route>
+                <Route path='/member' exact element ={<Member/>}></Route>
+                <Route path='/salary' exact element ={<Salary/>}></Route>
+                <Route path='/epartment' exact element ={<Department/>}></Route>
+                <Route path='detailcomponent/:StaffID' 
+                element={<Detail staffList={STAFFS}/>} ></Route>
               </Routes>
           </Container>  
         </CardBody>
