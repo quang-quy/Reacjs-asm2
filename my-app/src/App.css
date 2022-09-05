@@ -7,7 +7,17 @@
 }
 .logo {
   width: 30px;
- 
+}
+li {
+  border: none !important;
+}
+.Card {
+padding: 2% 0 0 35%;
+}
+.Teim {
+  width: 30%;
+  height: 30%;
+  
 }
 a {
   text-decoration: none;

@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardFooter,CardBody,Row,Col,Container  } from 'reactstrap';
+import { Card, CardHeader, CardFooter,CardBody,Row,Col,Container,  } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPhone,faFax,faEnvelope,faIdCard,faPeopleGroup,faMoneyBill } from '@fortawesome/free-solid-svg-icons'
@@ -20,12 +20,12 @@ return (
     <div className="App">
       
       <CardHeader className='asm1-header'>
-      <NavLink className={"Link"} to="/"> Home</NavLink> <br></br>
-          <NavLink className={"Link"} to="/Member"> <FontAwesomeIcon icon="fa-solid fa-people-group" />Nhân viên</NavLink> <br></br>
+      <NavLink className={"Link"} to="/"><FontAwesomeIcon icon="fa-solid fa-people-group" />Nhân viên  </NavLink> 
          <NavLink className={"Link"} to="/Department"><FontAwesomeIcon icon="fa-solid fa-id-card" />Phòng ban</NavLink> <br></br>
       <NavLink className={"Link"} to="/Salary"> <FontAwesomeIcon icon="fa-solid fa-money-bill" />Lương</NavLink>
-      <NavLink className={"Link"} to="/Detailcomponent"> <FontAwesomeIcon icon="fa-solid fa-people-group" /></NavLink>
+      
           </CardHeader>
+          <NavLink className={"Link"} to="/Detailcomponent"></NavLink>
       <Card>
       
    
