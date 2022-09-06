@@ -21,6 +21,7 @@ function department () {
                   
                   <h5 className=''> {s.name} </h5>
                 <p className=''>Số lượng nhân viên: {s.numberOfStaff} </p>
+               <img src= {s.image}></img>
                
                 
                 

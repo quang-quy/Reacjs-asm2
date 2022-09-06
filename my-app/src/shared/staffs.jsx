@@ -3,27 +3,33 @@ export const DEPARTMENTS =
         {
             id: "Dept01",
             name: "Sale",
-            numberOfStaff: 1
+            numberOfStaff: 1,
+            image:'https://wiki.tino.org/wp-content/uploads/2021/07/word-image-653.png'
         },
         {
             id: "Dept02",
             name: "HR",
-            numberOfStaff: 3
+            numberOfStaff: 3,
+            image:'https://img.freepik.com/premium-vector/hr-department-human-resources-management-employer-hiring-candidatesrecruitment-agency-employment_501813-922.jpg?w=2000'
+
         },
         {
             id: "Dept03",
             name: "Marketing",
-            numberOfStaff: 2
+            numberOfStaff: 2,
+            image:'https://assets.materialup.com/uploads/6bd7295c-06b2-4ecf-b349-3542bea1e533/preview.jpg'
         },
         {
             id: "Dept04",
             name: "IT",
-            numberOfStaff: 1
+            numberOfStaff: 1,
+            image:'https://static.vecteezy.com/system/resources/previews/004/491/062/non_2x/programmer-working-concept-for-web-banner-man-work-with-code-and-programming-at-computer-creates-software-modern-person-scene-illustration-in-flat-cartoon-design-with-people-characters-vector.jpg'
         },
         {
             id: "Dept05",
             name: "Finance",
-            numberOfStaff: 11
+            numberOfStaff: 11,
+            image:'https://restart.ba/wp-content/uploads/2021/02/financial-adm1.jpg'
         }
     ]
 export const ROLE = {
