@@ -35,7 +35,7 @@ return (
                 <Route path='/' exact element={<Home/>}></Route>
                 <Route path='/member' exact element ={<Member/>}></Route>
                 <Route path='/salary' exact element ={<Salary/>}></Route>
-                <Route path='/epartment' exact element ={<Department/>}></Route>
+                <Route path='/department' exact element ={<Department/>}></Route>
                 <Route path='detailcomponent/:StaffID' 
                 element={<Detail staffList={STAFFS}/>} ></Route>
               </Routes>
