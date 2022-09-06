@@ -39,7 +39,7 @@ function Home() {
               {STAFFS.map((s, idx) => 
               <Col  
               key={idx}
-               className="bg-light p-2" 
+               className="bg-light  p-2" 
                xs="6"
                 sm="4"
                  lg="2"

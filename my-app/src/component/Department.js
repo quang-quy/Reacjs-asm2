@@ -1,5 +1,5 @@
 import React from "react";
-import {STAFFS} from '../shared/staffs'
+import {STAFFS,DEPARTMENTS} from '../shared/staffs'
 import {Row, Col} from 'reactstrap'
 function department () {
   
@@ -7,20 +7,26 @@ function department () {
     return(
         <div>
       <Row>
-              {STAFFS.map((s, idx) => 
+      
+              {DEPARTMENTS.map((s, idx) => 
               <Col  
               key={idx}
-               className="bg-light p-2" 
-               xs="6"
-                sm="4"
-                 lg="2"
+               className="p-2 depart" 
+               xs="12"
+                sm="5"
+                 lg="3"
+                
                   
                  >
                   
+                  <h5 className=''> {s.name} </h5>
+                <p className=''>Số lượng nhân viên: {s.numberOfStaff} </p>
+               
                 
-                <p className='Name'> {s.department.name} </p>
+                
                  
               </Col>)}
+              
             </Row>
            
         </div>
