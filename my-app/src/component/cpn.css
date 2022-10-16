@@ -1,0 +1,93 @@
+.search {
+  border-color: #3498db;
+  width: 15%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.search:focus {
+  outline: none;
+}
+.left-label label {
+  margin-bottom: 25%;
+}
+
+.right-input input {
+  margin-bottom: 14%;
+  border-color: #3498db;
+  opacity: 0.7;
+  border-radius: 5px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.form-input {
+  display: flex;
+  justify-content: space-between;
+}
+.close {
+  display: none;
+}
+.search:hover {
+  transition: 2s;
+  width: 65%;
+}
+label {
+  display: block;
+}
+.modal-body {
+  display: flex;
+  align-items: center;
+}
+form input {
+  margin-bottom: 15px;
+  border: #3498db 2px solid;
+  border-radius: 5px;
+  color: #0c2461;
+  font-weight: bold;
+}
+.errors {
+  color: red;
+}
+form input:focus {
+  border-color: #3498db;
+}
+input[type="date"] {
+  padding: 10px;
+}
+input[type="date"] {
+  padding: 10px;
+}
+input[type="text"] {
+  padding: 5px 0 5px 10px;
+}
+input[type="number"] {
+  padding: 5px 0 5px 10px;
+}
+select {
+  border: #3498db 2px solid;
+  border-radius: 5px;
+  color: #0c2461;
+}
+input {
+}
+
+.add {
+  display: block;
+  margin-bottom: 20px;
+}
+.find {
+  border: none;
+  margin: 5px 0 0 10px;
+  background-color: #3498db;
+  color: whitesmoke;
+  border-radius: 7px;
+  padding: 5px 10px;
+}
+.main-input {
+  display: flex;
+  justify-content: space-between;
+}
