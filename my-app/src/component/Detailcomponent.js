@@ -9,6 +9,9 @@ function Detail() {
   const { StaffID } = useParams();
   const store = useSelector((state) => state);
   const staff = store.Staff.listStaff.find((staff) => staff.id == StaffID);
+
+  console.log({ staff });
+
   return (
     <div>
       <Breadcrumb>
@@ -26,7 +29,6 @@ function Detail() {
         </Col>
         <Col className="image" xs="12" md="9" sm="8" lg="9">
           <h5>Họ và tên: {staff.name}</h5>
-
           <p>Ngày sinh: {dateFormat(staff.doB)}</p>
           <p>Ngày vào công ty: {staff.startDate}</p>
           <p>Phòng ban: {staff.department?.name} </p>
@@ -34,6 +36,7 @@ function Detail() {
           <p>Số ngày đã làm thêm: {staff.overTime} </p>
         </Col>
       </Row>
+      {console.log(staff.startDate)}
       {/* <Row>
         <Col className="image" lg="3" md="3" sm="4" xs="12">
           <img

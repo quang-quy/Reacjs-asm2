@@ -53,7 +53,7 @@ form input {
   color: red;
 }
 form input:focus {
-  border-color: #3498db;
+  border: #0c2461;
 }
 input[type="date"] {
   padding: 10px;
@@ -71,8 +71,7 @@ select {
   border: #3498db 2px solid;
   border-radius: 5px;
   color: #0c2461;
-}
-input {
+  padding: 3px 35px 3px 5px;
 }
 
 .add {

@@ -48,8 +48,7 @@ export const STAFFS = [
     department: DEPARTMENTS[0],
     annualLeave: 1,
     overTime: 1,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 1,
@@ -60,8 +59,7 @@ export const STAFFS = [
     department: DEPARTMENTS[1],
     annualLeave: 2,
     overTime: 3,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 2,
@@ -72,8 +70,7 @@ export const STAFFS = [
     department: DEPARTMENTS[3],
     annualLeave: 4,
     overTime: 5,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 3,
@@ -84,8 +81,7 @@ export const STAFFS = [
     department: DEPARTMENTS[2],
     annualLeave: 6,
     overTime: 7,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 4,
@@ -96,8 +92,7 @@ export const STAFFS = [
     department: DEPARTMENTS[2],
     annualLeave: 8,
     overTime: 1,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 5,
@@ -108,8 +103,7 @@ export const STAFFS = [
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 6,
@@ -120,8 +114,7 @@ export const STAFFS = [
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 7,
@@ -132,8 +125,7 @@ export const STAFFS = [
     department: DEPARTMENTS[2],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 8,
@@ -144,8 +136,7 @@ export const STAFFS = [
     department: DEPARTMENTS[3],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 9,
@@ -156,8 +147,7 @@ export const STAFFS = [
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 10,
@@ -168,8 +158,7 @@ export const STAFFS = [
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 11,
@@ -180,8 +169,7 @@ export const STAFFS = [
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 12,
@@ -192,8 +180,7 @@ export const STAFFS = [
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 13,
@@ -204,8 +191,7 @@ export const STAFFS = [
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 14,
@@ -216,8 +202,7 @@ export const STAFFS = [
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
   {
     id: 15,
@@ -228,7 +213,6 @@ export const STAFFS = [
     department: DEPARTMENTS[4],
     annualLeave: 9,
     overTime: 10,
-    image:
-      "https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/272152907_1071638976739732_3190899723615333128_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HuLKHgaHaAcAX-4dWxq&_nc_ht=scontent.fhan18-1.fna&oh=00_AT-UM86mLcmKd_AvUh4OwRvsLK25qzehqxW8-bg2gCsVww&oe=6302DFC6",
+    image: "https://159i.files.wordpress.com/2022/10/public.jpg",
   },
 ];
