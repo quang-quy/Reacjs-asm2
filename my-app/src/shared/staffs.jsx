@@ -41,7 +41,7 @@ export const ROLE = {
 export const STAFFS = [
   {
     id: 0,
-    name: "Ngô Thị Tâm",
+    name: "Nguyễn Văn A",
     doB: "1999-01-01T08:59:00.000Z",
     salaryScale: 1,
     startDate: "2019-04-30T08:59:00.000Z",

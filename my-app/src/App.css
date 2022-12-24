@@ -1,23 +1,39 @@
 .asm1-header {
-  background-color: blue;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(0, 152, 155, 1) 0.1%,
+    rgba(0, 94, 120, 1) 94.2%
+  );
   color: white;
   font-size: 20px;
   padding: 20px 0;
-
-  
 }
-
-
-
-
+p {
+  margin-bottom: 10px;
+}
 .card-body {
   display: flex;
+  background-image: linear-gradient(
+    174.2deg,
+    rgba(255, 244, 228, 1) 7.1%,
+    rgba(240, 246, 238, 1) 67.4%
+  );
+}
+.delete-button {
+  margin: 15px 0;
+}
+.inline {
+  display: inline;
+}
+
+.depart h5 {
+  text-align: center;
 }
 .depart {
- 
+  border: 2px solid #6a89cc;
   margin: 10px;
-  border-radius: 5px;
-  background-color:#f1f2f6;
+  border-radius: 15px;
+  text-align: center;
 }
 .logo {
   width: 30px;
@@ -27,25 +43,27 @@ li {
   border: none !important;
 }
 .Card {
-padding: 2% 0 0 35%;
+  padding: 2% 0 0 35%;
 }
 .Teim {
   width: 100%;
   height: 100%;
-  
 }
 a {
   text-decoration: none;
 }
+.search {
+  background-color: unset;
+}
 .Link {
-padding-left: 30px;
+  padding-left: 30px;
 }
 .card-header {
   display: flex;
-  justify-content:first baseline;
+  justify-content: first baseline;
 }
 
-.card-header a{
+.card-header a {
   color: whitesmoke;
   text-decoration: none;
 }
@@ -54,9 +72,56 @@ padding-left: 30px;
 }
 .clear {
   clear: both;
-    font-size: 0;
-    line-height: 0;
-    display: block;
+  font-size: 0;
+  line-height: 0;
+  display: block;
+}
+.loading {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 2em;
+}
+
+span {
+  width: 0.3em;
+  height: 1em;
+  background-color: #3cefff;
+}
+
+span:nth-of-type(1) {
+  animation: grow 1s -0.45s ease-in-out infinite;
+}
+
+span:nth-of-type(2) {
+  animation: grow 1s -0.3s ease-in-out infinite;
+}
+
+span:nth-of-type(3) {
+  animation: grow 1s -0.15s ease-in-out infinite;
+}
+
+span:nth-of-type(4) {
+  animation: grow 1s ease-in-out infinite;
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(2);
+  }
+}
+
+.tamlongson {
+  margin-bottom: 70px;
+}
+.dpm {
+  margin: auto 0;
 }
 .card-footer {
   background-color: #48dbfb;
@@ -68,7 +133,7 @@ padding-left: 30px;
 .right {
   margin-top: 83px;
 }
-.p1{
+.p1 {
   text-align: center;
 }
 li {
@@ -76,7 +141,7 @@ li {
   cursor: pointer;
   border: #000 1px solid;
   margin-bottom: 10px;
-  
+
   display: flex;
 }
 
@@ -85,20 +150,28 @@ li {
   padding: 20px;
   margin-top: 60px;
 }
+.bg-light {
+  text-align: center;
+  border: 2px solid #6a89cc;
+  margin: 10px;
+  padding: 0;
+  border-radius: 15px;
+  background-image: linear-gradient(
+    174.2deg,
+    rgba(255, 244, 228, 1) 7.1%,
+    rgba(240, 246, 238, 1) 67.4%
+  );
+}
 .Name {
-position: relative;
-top: -10%;
-text-align: center;
+  position: relative;
+  text-align: center;
 }
 .img {
   width: 200px;
   height: 200px;
   float: left;
-  
 }
 img {
-padding-bottom: 25px;
   width: 100%;
-
+  border-radius: 10px;
 }
-

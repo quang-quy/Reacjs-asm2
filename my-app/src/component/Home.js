@@ -17,108 +17,80 @@ import "../component/cpn.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useSelector, useDispatch } from "react-redux";
-import { staffAction } from "../features/addStaffslice";
+import { addStaff, delStaff, staffAction } from "../features/addStaffslice";
+import StaffModal from "./StaffModal";
 
-function Home(props) {
+function Home() {
   const dispatch = useDispatch();
-  const listStaff = useSelector((state) => state.Staff.listStaff);
-  const { className } = props;
-  const [modal, setModal] = useState(false);
-  const toggle = () => setModal(!modal);
-  const closeBtn = (
-    <button className="close" onClick={toggle} type="button">
-      &times;
-    </button>
-  );
-  const [staffInfo, setStaffInfo] = useState();
-  const formik = useFormik({
-    initialValues: {
-      id: 0,
-      name: "",
-      Birthday: "",
-      startDate: "",
-      Department: "Sale",
-      Salary: 0,
-      annualLeave: 0,
-      overTime: 0,
-    },
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .max(30, "tên không được quá 30 kí tự")
-        .min(2, "tên không được dưới 2 kí tự")
-        .required("Tên không được để trống"),
-      startDate: Yup.date()
-        .max(new Date(), "ngày nhập vào không được lớn hơn ngày hiện tại")
-        .required("Yêu cầu nhập"),
-      Birthday: Yup.date()
-        .max(new Date(), "ngày nhập vào không được lớn hơn ngày hiện tại")
-        .required("Yêu cầu nhập"),
-      Department: Yup.string().required("vui lòng nhập phòng ban của bạn"),
-      Salary: Yup.string()
-        .max(8, "tên không được quá 8 kí tự")
-        .required("Vui lòng nhập chính xác hệ số lương của bạn"),
-      annualLeave: Yup.string()
-        .max(8, "tên không được quá 8 kí tự")
-        .required("Vui lòng nhập số ngày nghỉ còn lại"),
-      overTime: Yup.string()
-        .max(8, "tên không được quá 8 kí tự")
-        .required("Vui lòng nhập số ngày đã làm thêm"),
-      // overTime: Yup.string()
-      //   .max(8, "tên không được quá 8 kí tự")
-      //   .required("Vui lòng nhập số ngày đã làm thêm"),
-    }),
-    onSubmit: (values, { resetForm }) => {
-      values.id = listStaff[listStaff.length - 1]?.id + 1;
-      console.log("on submit", values);
-      values = { ...values, department: { name: values.Department } };
-      dispatch(staffAction.addStaff(values));
-      toggle();
-      resetForm();
-      handleSearch();
-    },
-  });
+  const {staffs, isLoading, searchedStaff} = useSelector((state) => ({
+    staffs: state.Staff.staffs,
+    isLoading: state.Staff.isLoading,
+    searchedStaff: state.Staff.searchedStaff,
+  }));
 
-  const [search, setSearch] = useState(listStaff); // thang nay luu gia tri da tim kiem
+  // const [staffsLocal, setStaffsLocal] = useState(staffs);
+
+  const [search, setSearch] = useState(staffs); // thang nay luu gia tri da tim kiem
   const [textSearch, setTextSearch] = useState(""); // thang nay luu gia tri da tim kiem
 
-  useEffect(() => {
-    console.log("1 lần duy nhất"); //didmount
-    return () => console.log("unmounting..."); //unmount
-  }, []);
-
-  useEffect(() => {
-    console.log("after list staff has changed", listStaff);
-    handleSearch();
-  }, [listStaff]); //khi store.Staff.listStaff thay đổi thì nó sẽ gọi hàm trong useEffect
-
+  // useEffect(() => {
+  //   console.log("after list staff has changed", listStaff);
+  //   handleSearch();
+  // }, [listStaff]); //khi store.Staff.listStaff thay đổi thì nó sẽ gọi hàm trong useEffect
+  // console.log(listStaff1)
   const handleSearch = () => {
-    console.log("searching...", textSearch);
-    setSearch(
-      listStaff.filter((staff) =>
-        staff.name.toLowerCase().includes(textSearch.toLowerCase())
-      )
-    );
-  };
+    // const searchedStaffs = staffs.filter(staff => staff.name.toLowerCase().includes(textSearch.toLowerCase()));
+    // setStaffsLocal(searchedStaffs);
+    dispatch(staffAction.searchStaff(textSearch))
 
-  const renderStaffInfo = () => {
-    return (
-      <Row className="">
-        <Col className="col-5 p-1">
-          <Card className="staff-detail" xs="12">
-            <CardBody>
-              <img className="Teim" src={staffInfo.image} />
-              <b className="mb-3">Họ và tên: {staffInfo.name}</b>
-              <p>Ngày sinh: {dateFormat(staffInfo.doB)}</p>
-              <p>Ngày vào công ty: {staffInfo.startDate}</p>
-              <p>Phòng ban: {staffInfo.department.name}</p>
-              <p>Số ngày nghỉ còn lại: {staffInfo.annualLeave}</p>
-              <p>Số ngày đã làm thêm: {staffInfo.overTime}</p>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-    );
+    // setListStaff1(
+    //   listStaff1.filter((staff) => {
+        
+    //     return staff.name.toLowerCase().includes(textSearch.toLowerCase());
+    //   })
+    // );
   };
+  /**GET LIST OF STAFF */
+  // useEffect(() => {
+  //   // const url = "https://rjs-101x-asignment-04-backend.vercel.app/staffs";
+  //   // fetch(url)
+  //   //   .then((Response) => Response.json())
+  //   //   .then((data) => {
+  //   //     setListStaff1(data)
+  //   //   })
+  //   //   .catch((err) => console.log(err));
+  //   dispatch(getStaffs());
+  // }, [dispatch, getStaffs]);
+
+  const handleDelete = id => {
+    // const delStaff = async() => {
+    //   const response = await fetch(`https://rjs-101x-asignment-04-backend.vercel.app/staffs/${id}`,{
+    //     method : 'DELETE'
+    //   })
+    //   const data = await response.json();
+    //   return data;
+    // }
+    // delStaff();
+    // fetch('https://rjs-101x-asignment-04-backend.vercel.app/staffs', + "" + id,{
+    //   method : 'DELETE',
+    //  body: id 
+    // }).then(res => console.log('Delete EMP',res)).catch(err => console.log(err))
+    // console.log(id)
+    dispatch(delStaff(id));
+  }   
+
+  if(isLoading) {
+    return (
+      <>
+            <div className="loading">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+      </>
+    )
+  }
 
   return (
     <div>
@@ -134,118 +106,11 @@ function Home(props) {
             Tìm Kiếm
           </button>
         </div>
-        <div>
-          <Button color="danger" onClick={toggle}>
-            Thêm nhân viên
-          </Button>
-          <Modal isOpen={modal} toggle={toggle} className={className}>
-            <ModalHeader toggle={toggle} close={closeBtn}>
-              Thêm nhân viên mới
-            </ModalHeader>
-            <ModalBody>
-              <div className="form-input">
-                {/* <div className="column left-label"> </div> */}
-                <form onSubmit={formik.handleSubmit} id="form">
-                  <label>Tên</label>
-                  <input
-                    type="text"
-                    onChange={formik.handleChange}
-                    onBlur={formik.onBlur}
-                    id="name"
-                    name="name"
-                    value={formik.values.name}
-                  />
-                  {formik.touched.name && formik.errors.name ? (
-                    <p className="errors"> {formik.errors.name} </p>
-                  ) : null}
-                  <label>Ngày Sinh</label>
-                  <input
-                    type="date"
-                    onChange={formik.handleChange}
-                    onBlur={formik.onBlur}
-                    id="Birthday"
-                    name="Birthday"
-                    value={formik.values.Birthday}
-                  ></input>
-                  {formik.touched.Birthday && formik.errors.Birthday ? (
-                    <p className="errors"> {formik.errors.Birthday} </p>
-                  ) : null}
-                  <label>Ngày Vào Công Ty</label>
-                  <input
-                    type="date"
-                    id="Datejoin"
-                    onChange={formik.handleChange}
-                    onBlur={formik.onBlur}
-                    name="startDate"
-                    value={formik.values.startDate}
-                  ></input>
-                  {formik.touched.startDate && formik.errors.startDate ? (
-                    <p className="errors"> {formik.errors.startDate} </p>
-                  ) : null}
-                  <label>Phòng ban</label>
-                  <select
-                    id="Department"
-                    name="Department"
-                    defaultValue={formik.values.Department}
-                    onChange={formik.handleChange}
-                  >
-                    <option value="Sale">Sale</option>
-                    <option value="Hr">Hr</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="It">It</option>
-                    <option value="Finance">Finance</option>
-                  </select>
-                  <label>hệ số lương</label>
-                  <input
-                    type="number"
-                    id="Salary"
-                    onChange={formik.handleChange}
-                    onBlur={formik.onBlur}
-                    name="Salary"
-                    value={formik.values.Salary}
-                  ></input>
-                  {formik.touched.Salary && formik.errors.Salary ? (
-                    <p className="errors"> {formik.errors.Salary} </p>
-                  ) : null}
-                  <label>số ngày nghỉ </label>
-                  <input
-                    type="number"
-                    onChange={formik.handleChange}
-                    onBlur={formik.onBlur}
-                    id="annualLeave"
-                    name="annualLeave"
-                    value={formik.values.annualLeave}
-                  ></input>
-                  {formik.touched.annualLeave && formik.errors.annualLeave ? (
-                    <p className="errors"> {formik.errors.annualLeave} </p>
-                  ) : null}
-                  <label>số ngày làm thêm</label>
-                  <input
-                    type="number"
-                    onChange={formik.handleChange}
-                    onBlur={formik.onBlur}
-                    id="overTime"
-                    name="overTime"
-                    value={formik.values.overTime}
-                  ></input>
-                  {formik.touched.overTime && formik.errors.overTime ? (
-                    <p className="errors"> {formik.errors.overTime} </p>
-                  ) : null}
-                  <Button className="add" color="primary" type="sumbit">
-                    Thêm nhân viên
-                  </Button>
-                  <Button className="cancel" color="secondary" onClick={toggle}>
-                    Hủy
-                  </Button>
-                </form>
-              </div>
-            </ModalBody>
-          </Modal>
-        </div>
+        <StaffModal staffs={staffs} isUpdate={false} text={'Thêm nhân viên'} />
       </div>
       <hr></hr>
       <Row>
-        {search.map((s, idx) => (
+      {searchedStaff[0] && searchedStaff.map((s, idx) => (
           <Col
             key={idx}
             className="bg-light  p-2"
@@ -254,14 +119,34 @@ function Home(props) {
             lg="2"
             style={{ cursor: "pointer" }}
           >
-            <Link to={`/detailcomponent/${idx}`}>
-              <img src="https://159i.files.wordpress.com/2022/10/public.jpg"></img>
+            <Link to={`/detailcomponent/${s.id}`}>
               <p className="Name"> {s.name} </p>
+              <img src="https://159i.files.wordpress.com/2022/10/public.jpg"></img>
+              {/* <button className="find delete-button" onClick={() => handleDelete(s.id)}>Xóa nhân viên</button> */}
             </Link>
+            <button className="find delete-button" onClick={() => handleDelete(s.id)}>Xóa nhân viên</button>
+          </Col>
+        ))}
+  
+        {!searchedStaff[0] && staffs.map((s, idx) => (
+          <Col
+            key={idx}
+            className="bg-light  p-2"
+            xs="6"
+            sm="4"
+            lg="2"
+            style={{ cursor: "pointer" }}
+          >
+            <Link to={`/detailcomponent/${s.id}`}>
+              <p className="Name"> {s.name} </p>
+              <img src="https://159i.files.wordpress.com/2022/10/public.jpg"></img>
+              {/* <button className="find delete-button" onClick={() => handleDelete(s.id)}>Xóa nhân viên</button> */}
+            </Link>
+            <button className="find delete-button" onClick={() => handleDelete(s.id)}>Xóa nhân viên</button>
+            <StaffModal isUpdate={true} staff={s ? s : null} text={'Sửa thông tin'} staffs={staffs} />
           </Col>
         ))}
       </Row>
-      {staffInfo && renderStaffInfo()}
     </div>
   );
 }
